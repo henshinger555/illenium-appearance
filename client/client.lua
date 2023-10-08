@@ -679,6 +679,14 @@ RegisterNetEvent("illenium-appearance:client:changeOutfit", function(data)
     end
 end)
 
+RegisterNetEvent("illenium-appearance:client:CustomMultiChar", function(data)
+
+    client.setPedComponents(data.model, data.components)
+    client.setPedProps(data.model, data.props)
+    client.setPedHair(data.model, data.hair, data.tattoos)
+
+end)
+
 RegisterNetEvent("illenium-appearance:client:DeleteManagementOutfit", function(id)
     TriggerServerEvent("illenium-appearance:server:deleteManagementOutfit", id)
     lib.notify({
